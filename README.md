@@ -40,6 +40,7 @@ Exemplo de um brawler:
   "descricao_poder_estelar": "Cria um campo de cura que regenera a vida dos aliados dentro dele.",
   "estilo": "Suporte"
 }
+```
 
 ## Tecnologias usadas
 
