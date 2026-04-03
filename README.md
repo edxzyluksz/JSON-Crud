@@ -156,8 +156,8 @@ Remove um brawler do sistema.
 
 ### 1. Clone o repositório
 ```bash
-git clone <seu-repositorio>
-cd <nome-do-projeto>
+git clone https://github.com/edxzyluksz/JSON-Crud.git JSON_Crud
+cd JSON_Crud
 ```
 
 ### 2. Instale as dependências
