@@ -1,5 +1,5 @@
 const fs = require("fs");
-const prompt = require(prompt-sync)();
+const prompt = require("prompt-sync")();
 
 function menu() {
     console.log("=== BRAWLERS ===");
@@ -34,6 +34,8 @@ function chooseClass() {
             return "sniper";
         case "6":
             return "controlador";
+        default:
+            console.log("Classe inválida!");
     }
 
     return false
@@ -63,10 +65,9 @@ function main() {
                 return
             default:
                 console.log("Digite corretamente!");
-            
-            const enter = prompt("Pressione Enter para continuar")
-            console.clear();
         }
+        const enter = prompt("Pressione Enter para continuar");
+        console.clear();
     } while (opcao !== "X")
 }
 
@@ -98,7 +99,7 @@ function addBrawler() {
     
     let nome = prompt("Nome do Brawler: ");
     let raridade = prompt("Raridade: ");
-    let vida = prompt("Vida:");
+    let vida = Number(prompt("Vida:"));
 
     if (isNaN(vida)) {
         console.log("Vida inválida!");
@@ -108,7 +109,7 @@ function addBrawler() {
     let ataque = prompt("Dano do ataque: ");
     let descricao = prompt("Descrição do Brawler: ");
     let poder_estelar = prompt("Nome (Poder estrela): ");
-    let poder_estelar_descricao = prompt("Descriçao (Poder estrela)");
+    let poder_estelar_descricao = prompt("Descrição (Poder estrela)");
     let estilo = prompt("Estilo de jogo: ");
 
     dados[classe].push({
@@ -156,7 +157,7 @@ function updtBrawler() {
     let ataque = prompt("Dano do ataque: ");
     let descricao = prompt("Descrição do Brawler: ");
     let poder_estelar = prompt("Nome (Poder estrela): ");
-    let poder_estelar_descricao = prompt("Descriçao (Poder estrela)");
+    let poder_estelar_descricao = prompt("Descrição (Poder estrela)");
     let estilo = prompt("Estilo de jogo: ");
 
     dados[classe][id].nome = nome
@@ -178,8 +179,8 @@ function getBrawlers() {
 
     const dados = readData();
 
+    console.log(`=== CLASSE: ${classe.toUpperCase()} ===`);
     dados[classe].forEach((brawler, index) => {
-        console.log(`=== CLASSE: ${classe.toUpperCase()}`);
         console.log(`ID: ${index + 1}`);
         console.log(`Nome: ${brawler.nome}`);
         console.log(`Raridade: ${brawler.raridade}`);
